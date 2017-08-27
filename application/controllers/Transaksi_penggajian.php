@@ -250,7 +250,7 @@ Class Transaksi_penggajian extends CI_Controller{
     
     function tampil_preview_potongan()
     {
-        $no = 1;
+        $no  = 1;
         $nip = $_GET['nip'];
         $nos = $_GET['noslip'];
         $ptn = $this->Model_transaksi->tampil_potongan($nip,$nos);
@@ -311,7 +311,7 @@ Class Transaksi_penggajian extends CI_Controller{
                       'gaji_bersih'     => $gaji_bersih,
                       'jml_jam_lembur'  => $jm_lembur,
                       'nip'             => $nip,
-                      'id_admin'           => '1'
+                      'id_admin'        => '1'
         );
         $this->Model_transaksi->insert_to_table('gaji',$data);
     }
