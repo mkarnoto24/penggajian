@@ -14,6 +14,18 @@
             <a href="<?php echo site_url('golongan/add_golongan');?>" class="btn btn-success"><i class="glyphicon glyphicon-plus-sign"></i> Add Golongan</a>
         </div>
         <div class="box-body" >
+            <?php
+            if (isset($_GET['pesan'])) {
+                $pesan = $_GET['pesan'];
+                echo '<div class="alert alert-success">
+                                    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>';
+                echo $pesan;
+                echo '</div>';
+                ?>
+                <meta http-equiv="refresh" content="2;url=<?php echo site_url('golongan'); ?>">    
+                <?php
+            }
+            ?>
             <table class="table table-bordered table-striped example1" width="100%">
                 <thead>
                     <tr>
@@ -52,22 +64,6 @@
                     }
                     ?>
                 </tbody>
-                <tfoot>
-                <td colspan="8">
-                    <?php
-                        if(isset($_GET['pesan']))
-                        {
-                            $pesan = $_GET['pesan'];
-                            echo '<div class="alert alert-success">
-                                    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>';
-                            echo $pesan;            
-                            echo '</div>';?>
-                    <meta http-equiv="refresh" content="1;url=<?php echo site_url('golongan'); ?>">    
-                            <?php
-                        }
-                    ?>
-                </td>
-                </tfoot>
             </table>
         </div>
     </div>
