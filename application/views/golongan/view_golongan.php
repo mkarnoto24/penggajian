@@ -52,6 +52,22 @@
                     }
                     ?>
                 </tbody>
+                <tfoot>
+                <td colspan="8">
+                    <?php
+                        if(isset($_GET['pesan']))
+                        {
+                            $pesan = $_GET['pesan'];
+                            echo '<div class="alert alert-success">
+                                    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>';
+                            echo $pesan;            
+                            echo '</div>';?>
+                    <meta http-equiv="refresh" content="1;url=<?php echo site_url('golongan'); ?>">    
+                            <?php
+                        }
+                    ?>
+                </td>
+                </tfoot>
             </table>
         </div>
     </div>

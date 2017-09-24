@@ -2,7 +2,6 @@
 
 Class Auth extends CI_Controller{
     
-    
     function __construct() {
         parent::__construct();
         $this->load->model('Model_login');
@@ -27,8 +26,8 @@ Class Auth extends CI_Controller{
                    'required' => '<div class="alert alert-danger text-center"><a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
                                   Password tidak boleh kosong</div>'));
 
-        $username = $this->input->post('username');
-        $pass     = $this->input->post('password');
+        $username = $this->input->post('username',TRUE);
+        $pass     = $this->input->post('password',TRUE);
 
         if ($this->form_validation->run() == FALSE) {
             $this->load->view('login');

@@ -52,8 +52,12 @@ Class Golongan extends CI_Controller{
                         'uang_lembur'       => $u_lembur,
                         'askes'             => $askes
             );
-            $this->Model_utama->insert_to_table($data);
-            redirect('golongan');
+            $cek = $this->Model_utama->insert_to_table($data);
+            if($cek)
+            {
+                $pesan =  'Data berhasil disimpan';
+                redirect('golongan?pesan='.$pesan);
+            }
         }
     }
     
